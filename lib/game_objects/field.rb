@@ -46,6 +46,8 @@ module Game
           )
         )
       end
+
+      Bridges.new
     end
 
     def add_robot(robot)

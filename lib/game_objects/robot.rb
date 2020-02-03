@@ -10,7 +10,7 @@ module Game
 
     def update
       @position += @velocity
-      @velocity *= 0.9
+      @velocity *= 0.94
 
       @velocity.y -= @speed * window.dt if Gosu.button_down?(Gosu::KB_UP)
       @velocity.y += @speed * window.dt if Gosu.button_down?(Gosu::KB_DOWN)
