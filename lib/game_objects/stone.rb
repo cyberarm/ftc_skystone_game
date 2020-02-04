@@ -1,8 +1,7 @@
 module Game
-  class Stone < CyberarmEngine::GameObject
+  class Stone < Game::GameObject
     def setup
       @image = Gosu::Image.new(GAME_ROOT_PATH + "/assets/stone.png")
-      self.scale = 0.5
     end
 
     def game_width

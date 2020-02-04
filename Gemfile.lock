@@ -1,0 +1,19 @@
+PATH
+  remote: ../cyberarm_engine
+  specs:
+    cyberarm_engine (0.13.0)
+      gosu (~> 0.15.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    gosu (0.15.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  cyberarm_engine!
+
+BUNDLED WITH
+   2.1.4
