@@ -68,13 +68,18 @@ module Game
 
       @polygon.points.push(top_left, top_right, bottom_right, bottom_left)
 
-      # radians = @angle.degrees_to_radians
-      # @polygon.points.each do |vector|
-      #   temp = @position - CyberarmEngine::Vector.new
+      radians = @angle.degrees_to_radians
+      @polygon.points.each do |vector|
+        temp = vector - @position
 
-      #   vector.x = temp.x * Math.cos(radians) - temp.y * Math.sin(radians)
-      #   vector.y = temp.y * Math.sin(radians) + temp.x * Math.cos(radians)
-      # end
+        rotated = CyberarmEngine::Vector.new(
+          temp.x * Math.cos(radians) - temp.y * Math.sin(radians),
+          temp.x * Math.sin(radians) + temp.y * Math.cos(radians)
+        )
+
+        pos = rotated + @position
+        vector.x, vector.y = pos.x, pos.y
+      end
     end
   end
 end
