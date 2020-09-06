@@ -1,6 +1,6 @@
 module Game
   class GameObject < CyberarmEngine::GameObject
-    attr_reader :polygon, :mass
+    attr_reader :polygon, :mass, :mass_inverse, :restitution
 
     def initialize(options = {})
       options[:scale_x] ||= 0.5
@@ -17,6 +17,8 @@ module Game
       @speed = options[:speed] || 6
       @turn_speed = options[:turn_speed] || 5
       @mass = options[:mass] || 10.0
+      @mass_inverse = 1.0 / @mass
+      @restitution = 1.0
     end
 
     def draw
@@ -35,6 +37,7 @@ module Game
     def update
       super
 
+      @velocity * 0 if @velocity.xy.sum < 0.00000001
       @position += @velocity.xy
       @angle += @velocity.z
       @velocity.x *= @movement_drag

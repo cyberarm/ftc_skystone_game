@@ -1,4 +1,8 @@
-require "cyberarm_engine"
+begin
+  require_relative "../cyberarm_engine/lib/cyberarm_engine"
+rescue LoadError
+  require "cyberarm_engine"
+end
 
 GAME_ROOT_PATH = File.expand_path(__dir__)
 

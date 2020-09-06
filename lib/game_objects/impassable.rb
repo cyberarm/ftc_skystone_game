@@ -4,6 +4,8 @@ module Game
       @options[:mass] = Float::INFINITY
       @width = @options[:width]
       @height = @options[:height]
+
+      @restitution = 0.1
     end
 
     def draw

@@ -1,5 +1,5 @@
 module Game
-  class Window < CyberarmEngine::Engine
+  class Window < CyberarmEngine::Window
     def initialize
       super(width: 600, height: 600, fullscreen: false, resizable: false)
       self.caption = "SkyStone"
